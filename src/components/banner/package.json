@@ -1,0 +1,37 @@
+{
+  "name": "kaka-banner",
+  "description": "banner组件",
+  "formKit": [
+    {
+      "$formkit": "url",
+      "name": "src",
+      "label": "图片地址",
+      "help": "banner 图片地址",
+      "validation": "required"
+    },
+    {
+      "$formkit": "url",
+      "name": "link",
+      "label": "跳转链接",
+      "help": "banner 跳转链接"
+    }
+  ],
+  "schema": {
+    "type": "object",
+    "properties": {
+      "src": {
+        "title": "图片地址",
+        "type": "string",
+        "format": "image"
+      },
+      "link": {
+        "title": "跳转链接",
+        "type": "string",
+        "format": "url"
+      }
+    },
+    "required": [
+      "src"
+    ]
+  }
+}

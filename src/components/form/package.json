@@ -1,0 +1,36 @@
+{
+  "name": "kaka-form",
+  "description": "form组件",
+  "formKit": [
+    {
+      "$formkit": "text",
+      "name": "btnText",
+      "label": "按钮文案",
+      "help": "form 按钮文案",
+      "validation": "required",
+      "validationMessages":"按钮文案不能为空"
+    },
+    {
+      "$formkit": "url",
+      "name": "action",
+      "label": "提交接口地址"
+    }
+  ],
+  "schema": {
+    "type": "object",
+    "properties": {
+      "btnText": {
+        "title": "按钮文案",
+        "type": "string"
+      },
+      "action": {
+        "title": "提交接口地址",
+        "type": "string",
+        "format": "url"
+      }
+    },
+    "required": [
+      "btnText"
+    ]
+  }
+}
