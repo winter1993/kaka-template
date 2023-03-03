@@ -82,7 +82,7 @@ const parentCall = {
     console.log('child:',JSON.parse(data))
     const res = JSON.parse(data)
    // 没有 schema 是系统组件
-   state.currentIndex = index ? index + 1 : index;
+   state.currentIndex = (index-1) ? (index-1) + 1 : (index-1);
       if (!res.schema) {
         state.components = [...state.components.slice(0, state.currentIndex), {
           name: 'coco-components-loader',
@@ -119,15 +119,11 @@ const parentCall = {
     this.changeIndex(next);
     getConfig('sortComponent');
   },
+  //调用add方法
   copyComponent(index) {
     const i = index - 1
-    state.components = [
-      ...state.components.slice(0, i),
-      JSON.parse(JSON.stringify(state.components[i])),
-      ...state.components.slice(i, state.components.length)
-    ];
-    this.changeIndex(i + 1);
-    getConfig('copyComponent');
+    const comp = JSON.stringify(state.components[i])
+    this.addComponent({data:comp,index})
   }
 };
 </script>
